@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Kai Angel - damage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="Downloads/kai.jpg">
+</head>
+
+<body>
+    <div class="background-blur"></div>
+    
+    <div class="music-container">
+        <div class="album-display active">
+            <div class="album-display-header">
+                <div class="album-cover-image"><img src="Downloads/kai.jpg" alt="Album Cover"></div>
+                <div class="album-info-section">
+                    <h1 class="album-name">damage</h1>
+                    <div class="artist-name">Kai Angel</div>
+                    <div class="album-controls-section">
+                        <button id="start-playback" class="control-btn main-action">
+                            <img src="Downloads/play-album-icon.png" alt="Play Album" class="btn-icon">
+                            <span>Слушать</span>
+                        </button>
+                        <button id="playback-mode" class="control-btn secondary-action">
+                            <img src="Downloads/repeat-icon.png" alt="Repeat Mode" class="btn-icon" id="mode-icon">
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="songs-container" id="songs-list"></div>
+        </div>
+        
+        <div class="track-detail-view" id="track-detail">
+            <div class="track-detail-header">
+                <button id="back-to-list" class="control-btn back-btn">
+                    <img src="Downloads/back-icon.png" alt="Back" class="btn-icon">
+                    <span>Назад к списку</span>
+                </button>
+            </div>
+            
+            <div class="track-detail-content">
+                <div class="detail-cover">
+                    <img id="detail-cover-img" src="Downloads/kai.jpg" alt="Track Cover">
+                </div>
+                
+                <div class="track-detail-info">
+                    <div id="detail-track-title" class="detail-track-title">Выберите трек</div>
+                    <div id="detail-track-artist" class="detail-track-artist">Kai Angel</div>
+                </div>
+                
+                <div class="detail-controls">
+                    <div class="main-controls">
+                        <button id="detail-shuffle" class="control-btn detail-control">
+                            <img src="Downloads/shuffle-icon.png" alt="Shuffle" class="btn-icon">
+                        </button>
+                        <button id="detail-prev" class="control-btn detail-control">
+                            <img src="Downloads/prev-icon.png" alt="Previous" class="btn-icon">
+                        </button>
+                        <button id="detail-play" class="control-btn main-action detail-play-btn">
+                            <img src="Downloads/play-icon.png" alt="Play" class="btn-icon" id="detail-play-icon">
+                        </button>
+                        <button id="detail-next" class="control-btn detail-control">
+                            <img src="Downloads/next-icon.png" alt="Next" class="btn-icon">
+                        </button>
+                    </div>
+                    
+                    <div class="volume-control-detail">
+                        <input id="detail-volume-slider" type="range" min="0" max="1" step="0.01" value="1" />
+                    </div>
+                    
+                    <div class="additional-controls">
+                        <button id="lyrics-btn" class="control-btn additional-btn">
+                            <img src="Downloads/lyrics-icon.png" alt="Lyrics" class="btn-icon">
+                            <span>Текст песни</span>
+                        </button>
+                        <button id="download-btn" class="control-btn additional-btn">
+                            <img src="Downloads/download-icon.png" alt="Download" class="btn-icon">
+                            <span>Скачать</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="lyrics-section" id="lyrics-section">
+                <div class="lyrics-content">
+                    <div id="lyrics-text" class="lyrics-text">
+                        Текст песни появится здесь после загрузки
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mini-player" id="mini-player">
+            <div class="mini-player-left">
+                <div class="small-cover"><img id="mini-cover-img" src="" alt="Current Track"></div>
+                <div class="track-info-mini">
+                    <div id="mini-track-title" class="track-title-mini">Трек</div>
+                    <div id="mini-track-artist" class="artist-name-mini">Исполнитель</div>
+                </div>
+            </div>
+            <div class="mini-player-controls">
+                <button id="mini-prev-btn" class="control-btn">
+                    <img src="Downloads/prev-icon.png" alt="Previous Track" class="btn-icon">
+                </button>
+                <button id="mini-play-btn" class="control-btn main-action">
+                    <img src="Downloads/play-icon.png" alt="Play/Pause" class="btn-icon" id="mini-play-icon">
+                </button>
+                <button id="mini-next-btn" class="control-btn">
+                    <img src="Downloads/next-icon.png" alt="Next Track" class="btn-icon">
+                </button>
+            </div>
+        </div>
+        
+        <div class="full-player-view" id="full-player">
+            <div class="player-card">
+                <div class="player-header">
+                    <button id="close-player" class="control-btn close-btn">
+                        <img src="Downloads/close-icon.png" alt="Close" class="btn-icon">
+                        <span>Закрыть</span>
+                    </button>
+                </div>
+                <div class="player-main-content">
+                    <div class="large-cover"><img id="full-cover-img" src="" alt="Track Cover"></div>
+                    <div id="full-track-title" class="track-title-large">Название трека</div>
+                    <div id="full-track-artist" class="artist-name-large">Исполнитель</div>
+                </div>
+                <div class="player-controls-panel">
+                    <div class="progress-container">
+                        <span id="current-time-display">0:00</span>
+                        <input id="progress-slider" type="range" min="0" max="100" value="0" />
+                        <span id="total-time-display">0:00</span>
+                    </div>
+                    <div class="playback-controls">
+                        <button id="full-prev-btn" class="control-btn">
+                            <img src="Downloads/prev-icon.png" alt="Previous Track" class="btn-icon">
+                        </button>
+                        <button id="full-play-btn" class="control-btn main-action">
+                            <img src="Downloads/play-icon.png" alt="Play/Pause" class="btn-icon" id="full-play-icon">
+                        </button>
+                        <button id="full-next-btn" class="control-btn">
+                            <img src="Downloads/next-icon.png" alt="Next Track" class="btn-icon">
+                        </button>
+                    </div>
+                    <div class="volume-control-section">
+                        <span class="volume-label">Громкость</span>
+                        <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1" />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <audio id="audio-element"></audio>
+        <script src="script.js"></script>
+    </div>
+</body>
+</html>

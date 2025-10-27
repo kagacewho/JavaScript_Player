@@ -144,9 +144,14 @@ class MusicPlayer {
             repeat: "Downloads/repeat-one-icon.png", 
             shuffle: "Downloads/shuffle-icon.png"
         };
-        
+
         this.modeIcon.src = modeIcons[this.playbackMode];
-        
+
+        const shuffleIcon = this.detailShuffleButton.querySelector('.btn-icon');
+        if (shuffleIcon) {
+            shuffleIcon.src = modeIcons[this.playbackMode];
+        }
+
         if (this.playbackMode === "shuffle") {
             this.detailShuffleButton.classList.add('active');
         } else {
